@@ -1,0 +1,11 @@
+後ほど１行目は削除
+分類コード 商品No 商品名 在庫数
+xx9999x...x(20)9999
+aa10001aa1111sample0001          1000
+bb10002aa1112sample0002          1000
+cc10003aa1113sample0003          1000
+dd10004aa1114sample0004          1000
+ee10005aa1115sample0005          1000
+ff10006aa1116sample0006          1000
+gg10007aa1117sample0007          0100
+hh10008aa1118sample0008          1000

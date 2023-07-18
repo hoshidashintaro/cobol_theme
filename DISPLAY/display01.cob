@@ -1,0 +1,19 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. DISPLAY01.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+           01 INPUT-RECORD.
+              03 IN-DATA-STR PIC X(50).
+              03 IN-DATA-NUM PIC 9(3).
+
+       PROCEDURE DIVISION.
+       MAIN.
+           DISPLAY "英字を入力してください。>>" WITH ON ADVANCING.
+           ACCEPT IN-DATA-STR FROM CONSOLE.
+           
+           DISPLAY "IN-DATA-STR = "IN-DATA-STR UPON CONSOLE.
+
+           STOP RUN.

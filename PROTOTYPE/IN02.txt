@@ -1,0 +1,8 @@
+ax1111sample0001          0200
+bx1112sample0002          0200
+cx1113sample0003          0200
+dx1114sample0004          0200
+ex1115sample0005          0200
+fx1116sample0006          0200
+gx1117sample0007          0200
+hx1118sample0008          0200
