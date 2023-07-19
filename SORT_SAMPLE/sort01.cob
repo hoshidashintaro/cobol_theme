@@ -68,3 +68,15 @@
             03   OT-TANKA              PIC 9(005).
             03   FILLER                PIC X(016).
        *>-----------------------------------------------------------------------
+       *>手続き部
+       *>-----------------------------------------------------------------------
+       PROCEDURE                         DIVISION.
+       *>
+           SORT   ST01-SORT-FILE
+                        ON   ASCENDING   KEY   ST-SHOHIN-CODE
+                        ON   ASCENDING   KEY   ST-SHURUI
+                  USING      IN01-TEST-FILE
+                  GIVING     OT01-TEST-FILE.
+       *>
+           STOP RUN.
+       *>-----------------------------------------------------------------------
