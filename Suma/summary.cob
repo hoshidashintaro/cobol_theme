@@ -64,7 +64,7 @@
        01   WRK-WORK-AREA.
             03   WRK-AT-END                   PIC X(004).
             *>後ほど出力確認で使うかも？使わなければ削除03   WRK-IN-COUNT                 PIC 9(006).
-            03   WRK-OUT-COUNT                PIC 9(006).
+            *>後ほど出力確認で使うかも？使わなければ削除03   WRK-OUT-COUNT                PIC 9(006).
             03   WRK-TYUMON-SU-TOTAL          PIC 9(004).
             03   WRK-INCOUNT                  PIC 9(006).
        *>前レコードの集計キー保存用
