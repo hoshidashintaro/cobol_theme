@@ -61,3 +61,9 @@
        *>
        77   CST-END                           PIC X(004) VALUE "END ".
        *>
+       01   WRK-WORK-AREA.
+            03   WRK-AT-END                   PIC X(004).
+            03   WRK-IN-COUNT                 PIC 9(006).
+            03   WRK-OUT-COUNT                PIC 9(006).
+            03   WRK-TYUMON-SU-TOTAL          PIC 9(004).
+            03   WRK-INCOUNT                  PIC 9(006).
