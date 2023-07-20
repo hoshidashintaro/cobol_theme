@@ -28,3 +28,21 @@
        DATA                               DIVISION.
        FILE                               SECTION.
        *>-----------------------------------------------------------------------
+       *>IN01-ZYUTYU-FILEの定義
+       *>-----------------------------------------------------------------------
+       FD   IN01-ZYUTYU-FILE.
+       01   IN01-ZYUTYU-FILE-REC.
+            03   IN01-ZYUTYU-BANGOU.
+                 05   IN01-MISEBAN            PIC X(003).
+                 05   IN01-TYUMON-BANGOU      PIC 9(005).
+            03   IN01-SHOHIN-ZYOUHOU.
+                 05   IN01-BUNRUI-CODE        PIC X(002).
+                 05   IN01-SHOHIN-NO          PIC 9(004).
+            03   IN01-TYUMON-SU               PIC 9(003).
+            03   IN01-UKETSUKE-NICHIZI.
+                 05   IN01-HIDUKE             PIC 9(006).
+                 05   IN01-ZIKAN              PIC 9(004).
+            03   IN01-TANTOSYA-CODE.
+                 05   IN01-BUSHO-CODE         PIC X(003).
+                 05   IN01-TANTOSYA-BANGOU    PIC 9(004).
+       *>-----------------------------------------------------------------------
