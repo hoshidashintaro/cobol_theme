@@ -11,7 +11,6 @@
        MOVE  ZERO TO  WK-SUJI-I.
        MOVE  ZERO TO  WK-SUJI-TOTAL.
        ADD  1 TO  WK-SUJI-I.
-       MOVE  ZERO TO  WK-SUJI-TOTAL.
        *>指定回数繰り返す処理
            PERFORM UNTIL WK-SUJI-I > 10
                ADD WK-SUJI-I TO  WK-SUJI-TOTAL
@@ -20,4 +19,3 @@
        *>
            DISPLAY WK-SUJI-TOTAL.
            STOP RUN.
-       END PROGRAM LOOP_SAMPLE02.

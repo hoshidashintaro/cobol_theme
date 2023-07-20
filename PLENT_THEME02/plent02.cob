@@ -116,6 +116,11 @@
                      DISPLAY "READ END"
        *>
                NOT   AT     END
+               IF IN01-RECODE = SPACE THEN
+               DISPLAY IN01-RECODE
+               ADD   ZERO   TO   WRK-OUT-COUNT
+               *>
+               ELSE IF IN01-RECODE >= 1 THEN
                      DISPLAY IN01-RECODE
                      ADD   1   TO   WRK-OUT-COUNT
        *>
