@@ -46,10 +46,10 @@
                  05   IN01-BUSHO-CODE         PIC X(003).
                  05   IN01-TANTOSYA-BANGOU    PIC 9(004).
        *>-----------------------------------------------------------------------
-       *>OT01-ZYUTYU-FILEの定義
+       *>OT01-TYUMON-SU-FILEの定義
        *>-----------------------------------------------------------------------
-       FD   OT01-ZYUTYU-FILE.
-       01   OT01-ZYUTYU-FILE-REC.
+       FD   OT01-TYUMON-SU-FILE.
+       01   OT01-TYUMON-SU-FILE-REC.
             03   OT01-SHOHIN-ZYOUHOU.
                  05   OT01-BUNRUI-CODE        PIC X(002).
                  05   OT01-SHOHIN-NO          PIC 9(004).
