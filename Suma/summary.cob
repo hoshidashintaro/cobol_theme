@@ -71,3 +71,7 @@
        01   KEY-SUMMARY.
             03   KEY-SHOHIN-CODE              PIC 9(005).
             03   KEY-SHURUI                   PIC 9(003).
+       *>
+       01   MS1-MESSAGE-AREA.
+            03   FILLER                       PIC X(018) VALUE "正常終了".
+       *>
