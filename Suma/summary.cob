@@ -67,6 +67,8 @@
             *>後ほど出力確認で使うかも？使わなければ削除03   WRK-OUT-COUNT                PIC 9(006).
             03   WRK-TYUMON-SU-TOTAL          PIC 9(004).
             03   WRK-INCOUNT                  PIC 9(006).
+            03   WRK-TYUMON-SU                PIC 9(003).
+       *>
        *>前レコードの集計キー保存用
        01   KEY-SUMMARY.
             03   KEY-SHOHIN-CODE              PIC 9(005).
@@ -123,11 +125,17 @@
        *>-----------------------------------------------------------------------
        *>ファイル読み込み処理
        *>-----------------------------------------------------------------------
-       TERM-PROM                          SECTION.
+       IN01-ZYUTYU-FILE-READ-PROC                          SECTION.
        *>
-           DISPLAY   MS1-MESSAGE-AREA UPON   CONSOLE.
+           READ IN01-ZYUTYU-FILE
+           AT END
+           MOVE "END" TO WRK-AT-END
+           DISPLAY "READ END"
+           *>
+           NOT AT END
+
        *>
-       TERM-PROC-EXIT.
+       IN01-ZYUTYU-FILE-READ-PROC-EXIT.
        *>
            EXIT.
        *>-----------------------------------------------------------------------
