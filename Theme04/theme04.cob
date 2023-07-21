@@ -12,10 +12,11 @@
        INPUT-OUTPUT                       SECTION.
        FILE-CONTROL.
        *>----------------------------------------------------------------------------
-       *>[入力]受注ファイル
+       *>入力ファイル
        *>----------------------------------------------------------------------------
        SELECT    IN01-ZYUTYU-FILE   ASSIGN       TO   "IN01.txt"
-                                    ORGANIZATION IS LINE SEQUENTIAL.
+                                    ORGANIZATION IS LINE SEQUENTIAL
+                                    STATUS IN-FILE-STATUS.
        *>----------------------------------------------------------------------------
        *>[出力]受注ファイル店番一致分のみ
        *>----------------------------------------------------------------------------
@@ -51,7 +52,7 @@
        *>
        01   WRK-WORK-AREA.
             *>--手続き部で「MAIN-PROC」を終了させる際の変数となる--
-            03   WRK-AT-END                   PIC X(004).
+            *>03   WRK-AT-END                   PIC X(004).
             *>--書き込み件数をカウントする変数--
             03   WRK-OUT-COUNT                PIC 9(006).
             03   WRK-MISEBAN                  PIC X(003).
@@ -81,7 +82,7 @@
        *>
            PERFORM   INIT-PROC.
        *>
-           PERFORM   MAIN-PROC  UNTIL   WRK-AT-END   =   CST-END.
+           *>PERFORM   MAIN-PROC  UNTIL   WRK-AT-END   =   CST-END.
        *>
            PERFORM   TERM-PROC.
        *>
@@ -92,7 +93,7 @@
        INIT-PROC                         SECTION.
        *>
        *>  作業領域の初期化
-           MOVE   SPACE      TO   WRK-AT-END.
+           *>MOVE   SPACE      TO   WRK-AT-END.
        *>
            MOVE   ZERO       TO   WRK-OUT-COUNT.
        *>
@@ -169,7 +170,7 @@
        *>
            READ   IN01-ZYUTYU-FILE
              AT   END
-                  MOVE   "END"   TO   WRK-AT-END
+                  *>MOVE   "END"   TO   WRK-AT-END
                   MOVE   9   TO   KY01-STATUS
        *>
             NOT   AT   END
