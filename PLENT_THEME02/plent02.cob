@@ -1,9 +1,10 @@
-       *>FC課題2 プリント処理のテストプログラム
+       *>************************************************************************
+       *>FC課題2 プリント処理のプログラム
        *>************************************************************************
        *>見出し部
        *>************************************************************************
        IDENTIFICATION                DIVISION.
-       PROGRAM-ID.                   PLENT002.
+       PROGRAM-ID.                   PRINT002.
        *>************************************************************************
        *>環境部
        *>************************************************************************
@@ -79,7 +80,7 @@
            OPEN   INPUT    IN01-FILE
                   OUTPUT   PRT-FILE.
        *>
-       *>  [入力]受注ファイルの読み込み
+       *>  入力ファイルの読み込み
            PERFORM    IN01-FILE-READ-PROC.
        *>
        MAIN-PROC-EXIT.
@@ -109,11 +110,6 @@
            CLOSE   IN01-FILE
                    PRT-FILE.
        *>
-       *>  入力件数の表示
-       *>
-       *>  プログラムが終了したことを表示する
-           *>DISPLAY   MS1-MESSAGE-AREA   UPON   CONSOLE.
-       *>
        TERM-PROC-EXIT.
        *>
            EXIT.
@@ -129,11 +125,9 @@
        *>
                NOT   AT     END
                IF IN01-RECODE = SPACE THEN
-               *>DISPLAY IN01-RECODE
                ADD   ZERO   TO   WRK-COUNT
                *>
                ELSE IF IN01-RECODE >= 1 THEN
-                     DISPLAY IN01-RECODE
                      ADD   1   TO   WRK-COUNT
        *>
            END-READ
@@ -146,8 +140,6 @@
        *>
        *>      件数の代入と印刷処理
                MOVE      WRK-COUNT        TO   PRT-COUNT.
-               *>DISPLAY"WRK-COUNT:"WRK-OUT-COUNT
-               *>DISPLAY"PRT-COUNT:"PRT-COUNT
        *>
                WRITE     PRT-RECODE         FROM   HD01-PRT-COUNT.
        *>
