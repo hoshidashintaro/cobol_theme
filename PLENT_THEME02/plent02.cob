@@ -106,8 +106,8 @@
        TERM-PROC                     SECTION.
        *>
        *>  ファイルのクローズ
-           CLOSE   IN01-TEST-FILE
-                   PRT-TEST-FILE.
+           CLOSE   IN01-FILE
+                   PRT-FILE.
        *>
        *>  入力件数の表示
        *>
@@ -123,7 +123,7 @@
        IN01-FILE-READ-PROC       SECTION.
        *>
        PERFORM UNTIL IN-FILE-STATUS NOT = "00"
-           READ IN01-TEST-FILE
+           READ IN01-FILE
                AT    END
                      DISPLAY "READ END"
        *>
@@ -141,7 +141,7 @@
        *>************************************************************************
        *>印刷処理
        *>************************************************************************
-       IN01-FILE-READ-PROC       SECTION.
+       PRINT-PROC       SECTION.
 
        *>
        *>      件数の代入と印刷処理
@@ -151,6 +151,6 @@
        *>
                WRITE     PRT-RECODE         FROM   HD01-PRT-COUNT.
        *>
-       IN01-FILE-READ-PROC-EXIT.
+       PRINT-PROC-EXIT.
        *>
            EXIT.
