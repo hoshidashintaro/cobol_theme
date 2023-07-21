@@ -125,7 +125,7 @@
        *>
                NOT   AT     END
                IF IN01-RECODE = SPACE THEN
-               ADD   ZERO   TO   WRK-COUNT
+               MOVE   ZERO   TO   WRK-COUNT
                *>
                ELSE IF IN01-RECODE >= 1 THEN
                      ADD   1   TO   WRK-COUNT
@@ -141,7 +141,7 @@
        *>      件数の代入と印刷処理
                MOVE      WRK-COUNT        TO   PRT-COUNT.
        *>
-               WRITE     PRT-RECODE         FROM   HD01-PRT-COUNT.
+               WRITE     PRT-RECODE         FROM   PRT-COUNT.
        *>
        PRINT-PROC-EXIT.
        *>

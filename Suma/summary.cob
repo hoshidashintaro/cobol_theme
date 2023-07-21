@@ -74,8 +74,8 @@
             03   KEY-BUNRUI-CODE              PIC X(002).
             03   KEY-SHOHIN-NO                PIC 9(004).
        *>
-       01   MS1-MESSAGE-AREA.
-            03   FILLER                       PIC X(018) VALUE "正常終了".
+       *>01   MS1-MESSAGE-AREA.
+       *>     03   FILLER                       PIC X(018) VALUE "正常終了".
        *>-----------------------------------------------------------------------
        *>手続き部
        *>-----------------------------------------------------------------------
@@ -83,11 +83,13 @@
        *>
              PERFORM   MAIN-PROC.
        *>
+             PERFORM   TERM-PROC.
        *>
+       STOP RUN.
        *>-----------------------------------------------------------------------
        *>主処理
        *>-----------------------------------------------------------------------
-       MAIN-PROM                          SECTION.
+       MAIN-PROC                          SECTION.
        *>
        *>    初期処理を実行
              PERFORM   INIT-PROC.
@@ -97,7 +99,7 @@
                     OUTPUT   OT01-TYUMON-SU-FILE.
        *>
        *>    入力ファイルの読み込み
-             PERFPRM   IN01-ZYUTYU-FILE-READ-PROC.
+             PERFORM   IN01-ZYUTYU-FILE-READ-PROC.
        *>
        *>    集計処理の呼び出し
              PERFORM   SUMMARY-MAIN-PROC
@@ -108,7 +110,7 @@
        *>-----------------------------------------------------------------------
        *>初期処理
        *>-----------------------------------------------------------------------
-       INIT-PROM                          SECTION.
+       INIT-PROC                          SECTION.
        *>
              MOVE   SPACE   TO   WRK-AT-END.
              MOVE   ZERO    TO   WRK-TYUMON-SU.
@@ -120,9 +122,13 @@
        *>-----------------------------------------------------------------------
        *>終了処理
        *>-----------------------------------------------------------------------
-       TERM-PROM                          SECTION.
+       TERM-PROC                          SECTION.
        *>
-           DISPLAY   MS1-MESSAGE-AREA UPON   CONSOLE.
+       *>  ファイルのクローズ
+           CLOSE   IN01-ZYUTYU-FILE
+                   OT01-TYUMON-SU-FILE.
+
+           *>DISPLAY   MS1-MESSAGE-AREA UPON   CONSOLE.
        *>
        TERM-PROC-EXIT.
        *>
@@ -132,6 +138,7 @@
        *>-----------------------------------------------------------------------
        IN01-ZYUTYU-FILE-READ-PROC                          SECTION.
        *>
+       *>PERFORM   UNTIL WRK-AT-END = CST-END
            READ IN01-ZYUTYU-FILE
                 AT     END
                 MOVE      "END"          TO   WRK-AT-END
@@ -141,6 +148,7 @@
                MOVE   IN01-BUNRUI-CODE   TO   KEY-BUNRUI-CODE
                MOVE   IN01-SHOHIN-NO     TO   KEY-SHOHIN-NO
            END-READ.
+       *>END-PERFORM.
        *>
        IN01-ZYUTYU-FILE-READ-PROC-EXIT.
        *>
@@ -169,7 +177,7 @@
            ADD IN01-TYUMON-SU TO WRK-TYUMON-SU-TOTAL.
        *>
        *>  入力ファイルの読み込み
-           PERFPRM   IN01-ZYUTYU-FILE-READ-PROC.
+           PERFORM   IN01-ZYUTYU-FILE-READ-PROC.
        *>
        SUMMARY-MAIN-PROC-EXIT.
        *>
