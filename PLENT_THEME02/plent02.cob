@@ -71,7 +71,7 @@
        INIT-PROC                     SECTION.
        *>
        *>  作業領域の初期化
-           WRK-COUNT    =   ZERO.
+           WRK-COUNT        =   ZERO.
            IN-FILE-STATUS   =   SPACE.
        *>
        *>  印刷用パーツ定義の初期化
