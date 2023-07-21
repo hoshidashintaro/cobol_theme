@@ -185,6 +185,9 @@
        *>  数量の合計
            MOVE   WRK-TYUMON-SU-TOTAL   TO   OT01-TYUMON-SU.
        *>
+       *>  出力ファイルへ書き込む
+           WRITE   OT01-TYUMON-SU-FILE-REC.
+       *>
        WRITE-PROC-EXIT.
        *>
            EXIT.
