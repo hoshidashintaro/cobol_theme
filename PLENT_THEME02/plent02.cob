@@ -15,11 +15,11 @@
        *>[入力]受注ファイル
        *>************************************************************************
        SELECT   IN01-TEST-FILE     ASSIGN        TO "IN01.txt"
-                                     ORGANIZATION IS LINE SEQUENTIAL
-                                     STATUS IN-FILE-STATUS.
+                                   ORGANIZATION IS LINE SEQUENTIAL
+                                   STATUS IN-FILE-STATUS.
        *>************************************************************************
        SELECT   PRT-TEST-FILE     ASSIGN        TO "PR01.txt"
-                                     ORGANIZATION IS LINE SEQUENTIAL.
+                                  ORGANIZATION IS LINE SEQUENTIAL.
        *>************************************************************************
        *>データ部
        *>************************************************************************
