@@ -73,7 +73,7 @@
                   OUTPUT   PRT-TEST-FILE.
        *>
        *>[入力]受注ファイルの読み込み
-           PERFORM    TEST-FILE-IN01-READ-PROC.
+           PERFORM    IN01-FILE-READ-AND-WRITE-PROC.
        *>
        INIT-PROC-EXIT.
        *>
@@ -98,7 +98,7 @@
        *>************************************************************************
        *>[入力]受注ファイルの読み込みと書き込み
        *>************************************************************************
-       TEST-FILE-IN01-READ-PROC       SECTION.
+       IN01-FILE-READ-AND-WRITE-PROC       SECTION.
        *>
        PERFORM UNTIL IN-FILE-STATUS NOT = "00"
            READ IN01-TEST-FILE
@@ -124,6 +124,6 @@
        *>
                WRITE     PRT-RECODE         FROM   HD01-OUT-NUMBER.
        *>
-       TEST-FILE-IN01-READ-PROC-EXIT.
+       IN01-FILE-READ-AND-WRITE-PROC-EXIT.
        *>
            EXIT.
