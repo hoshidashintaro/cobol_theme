@@ -68,11 +68,11 @@
        *>************************************************************************
        INIT-PROC                     SECTION.
        *>
-       *>ファイルのオープン
+       *>  ファイルのオープン
            OPEN   INPUT    IN01-FILE
                   OUTPUT   PRT-TEST-FILE.
        *>
-       *>[入力]受注ファイルの読み込み
+       *>  [入力]受注ファイルの読み込み
            PERFORM    IN01-FILE-READ-AND-WRITE-PROC.
        *>
        INIT-PROC-EXIT.
@@ -83,11 +83,11 @@
        *>************************************************************************
        TERM-PROC                     SECTION.
        *>
-       *>ファイルのクローズ
+       *>  ファイルのクローズ
            CLOSE   IN01-TEST-FILE
                    PRT-TEST-FILE.
        *>
-       *>入力件数の表示
+       *>  入力件数の表示
        *>
        *>  プログラムが終了したことを表示する
            *>DISPLAY   MS1-MESSAGE-AREA   UPON   CONSOLE.
@@ -117,7 +117,7 @@
            END-READ
        END-PERFORM.
        *>
-       *>件数の代入と印刷処理
+       *>      件数の代入と印刷処理
                MOVE      WRK-OUT-COUNT        TO   OUT-NUMBER.
                *>DISPLAY"WRK-OUT-COUNT:"WRK-OUT-COUNT
                *>DISPLAY"OUT-NUMBER:"OUT-NUMBER
