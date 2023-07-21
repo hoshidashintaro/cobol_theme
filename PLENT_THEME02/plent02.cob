@@ -68,6 +68,9 @@
        *>************************************************************************
        INIT-PROC                     SECTION.
        *>
+       *>  作業領域の初期化
+           WRK-OUT-COUNT    =   ZERO.
+           IN-FILE-STATUS   =   SPACE.
        *>  ファイルのオープン
            OPEN   INPUT    IN01-FILE
                   OUTPUT   PRT-TEST-FILE.
