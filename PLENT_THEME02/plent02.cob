@@ -70,8 +70,12 @@
        *>************************************************************************
        MAIN-PROC                     SECTION.
        *>
+       *>    初期処理を行う（遷移する）
              PERFORM   INIT-PROC.
        *>
+             PERFORM   INIT-PROC.
+       *>
+
        MAIN-PROC-EXIT.
        *>
            EXIT.
@@ -92,7 +96,7 @@
                   OUTPUT   PRT-TEST-FILE.
        *>
        *>  [入力]受注ファイルの読み込み
-           PERFORM    IN01-FILE-READ-AND-WRITE-PROC.
+           *>PERFORM    IN01-FILE-READ-AND-WRITE-PROC.
        *>
        INIT-PROC-EXIT.
        *>
