@@ -165,6 +165,9 @@
                MOVE   IN01-SHOHIN-NO     TO   KEY-SHOHIN-NO
            END-IF.
        *>
+       *>  数量、売上金額の集計
+           ADD IN01-TYUMON-SU TO WRK-TYUMON-SU-TOTAL.
+       *>
        SUMMARY-MAIN-PROC-EXIT.
        *>
            EXIT.
