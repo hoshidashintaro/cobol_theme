@@ -18,7 +18,7 @@
                                     ORGANIZATION IS LINE SEQUENTIAL
                                     STATUS IN-FILE-STATUS.
        *>----------------------------------------------------------------------------
-       *>[出力]受注ファイル店番一致分のみ
+       *>出力ファイル
        *>----------------------------------------------------------------------------
        SELECT    OT01-ZYUTYU-FILE   ASSIGN       TO   "OT01.txt"
                                     ORGANIZATION IS LINE SEQUENTIAL.
