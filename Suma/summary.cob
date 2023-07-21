@@ -71,8 +71,8 @@
        *>
        *>前レコードの集計キー保存用
        01   KEY-SUMMARY.
-            03   KEY-SHOHIN-CODE              PIC 9(005).
-            03   KEY-SHURUI                   PIC 9(003).
+            03   KEY-BUNRUI-CODE              PIC X(002).
+            03   KEY-SHOHIN-NO                PIC 9(004).
        *>
        01   MS1-MESSAGE-AREA.
             03   FILLER                       PIC X(018) VALUE "正常終了".
