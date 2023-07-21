@@ -58,9 +58,9 @@
        *>************************************************************************
        PROCEDURE                     DIVISION.
        *>
-       PERFORM   INIT-PROC.
+             PERFORM   INIT-PROC.
        *>
-       PERFORM   TERM-PROC.
+             PERFORM   TERM-PROC.
        *>
        STOP RUN.
        *>************************************************************************
