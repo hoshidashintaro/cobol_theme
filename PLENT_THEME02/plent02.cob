@@ -91,11 +91,11 @@
        INIT-PROC                     SECTION.
        *>
        *>  作業領域の初期化
-           MOVE   WRK-COUNT        TO   ZERO.
-           MOVE   IN-FILE-STATUS   TO   SPACE.
+           MOVE   ZERO        TO   WRK-COUNT.
+           MOVE   SPACE       TO   IN-FILE-STATUS.
        *>
        *>  印刷用パーツ定義の初期化
-           MOVE   PRT-COUNT        TO   ZERO.
+           MOVE   ZERO        TO   PRT-COUNT.
        *>
        INIT-PROC-EXIT.
        *>
