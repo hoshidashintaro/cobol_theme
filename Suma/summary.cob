@@ -158,3 +158,16 @@
        SUMMARY-MAIN-PROC-EXIT.
        *>
            EXIT.
+       *>-----------------------------------------------------------------------
+       *>ファイルの書き込み処理
+       *>-----------------------------------------------------------------------
+       WRITE-PROC                          SECTION.
+       *>
+           MOVE   KEY-BUNRUI-CODE   TO   OT01-BUNRUI-CODE
+           MOVE   KEY-SHOHIN-NO     TO   OT01-SHOHIN-NO
+              *>
+           
+       *>
+       WRITE-PROC-EXIT.
+       *>
+           EXIT.
