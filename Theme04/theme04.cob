@@ -47,7 +47,7 @@
        WORKING-STORAGE                    SECTION.
        *>
        *>--手続き部で「MAIN-PROC」を終了させる際の定数となる--
-       77   CST-END                           PIC X(004) VALUE "END ".
+       *>77   CST-END                           PIC X(004) VALUE "END ".
        *>
        *>
        01   WRK-WORK-AREA.
