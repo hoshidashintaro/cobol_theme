@@ -87,7 +87,12 @@
        *>-----------------------------------------------------------------------
        MAIN-PROM                          SECTION.
        *>
+       *>    初期処理を実行
              PERFORM   INIT-PROC.
+       *>
+       *>    ファイルのオープン
+             OPEN   INPUT    IN01-ZYUTYU-FILE
+                    OUTPUT   OT01-TYUMON-SU-FILE.
        *>
        MAIN-PROC-EXIT.
        *>
