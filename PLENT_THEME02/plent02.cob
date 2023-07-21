@@ -73,9 +73,13 @@
        *>    初期処理を行う（遷移する）
              PERFORM   INIT-PROC.
        *>
-             PERFORM   INIT-PROC.
+       *>  ファイルのオープン
+           OPEN   INPUT    IN01-FILE
+                  OUTPUT   PRT-TEST-FILE.
        *>
-
+       *>  [入力]受注ファイルの読み込み
+           PERFORM    IN01-FILE-READ-PROC.
+       *>
        MAIN-PROC-EXIT.
        *>
            EXIT.
@@ -90,13 +94,6 @@
        *>
        *>  印刷用パーツ定義の初期化
            PRT-COUNT        =   ZERO.
-       *>
-       *>  ファイルのオープン
-           OPEN   INPUT    IN01-FILE
-                  OUTPUT   PRT-TEST-FILE.
-       *>
-       *>  [入力]受注ファイルの読み込み
-           *>PERFORM    IN01-FILE-READ-AND-WRITE-PROC.
        *>
        INIT-PROC-EXIT.
        *>
@@ -121,7 +118,7 @@
        *>************************************************************************
        *>[入力]受注ファイルの読み込みと書き込み
        *>************************************************************************
-       IN01-FILE-READ-AND-WRITE-PROC       SECTION.
+       IN01-FILE-READ-PROC       SECTION.
        *>
        PERFORM UNTIL IN-FILE-STATUS NOT = "00"
            READ IN01-TEST-FILE
@@ -147,6 +144,6 @@
        *>
                WRITE     PRT-RECODE         FROM   HD01-PRT-COUNT.
        *>
-       IN01-FILE-READ-AND-WRITE-PROC-EXIT.
+       IN01-FILE-READ-PROC-EXIT.
        *>
            EXIT.
