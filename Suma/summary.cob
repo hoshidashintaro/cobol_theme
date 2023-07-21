@@ -181,8 +181,9 @@
        *>
            MOVE   KEY-BUNRUI-CODE   TO   OT01-BUNRUI-CODE
            MOVE   KEY-SHOHIN-NO     TO   OT01-SHOHIN-NO
-              *>
-           
+       *>
+       *>  数量の合計
+           MOVE   WRK-TYUMON-SU-TOTAL   TO   OT01-TYUMON-SU.
        *>
        WRITE-PROC-EXIT.
        *>
