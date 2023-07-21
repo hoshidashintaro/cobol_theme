@@ -69,8 +69,8 @@
        INIT-PROC                     SECTION.
        *>
        *>ファイルのオープン
-           OPEN   INPUT    IN01-TEST-FILE
-           OUTPUT PRT-TEST-FILE.
+           OPEN   INPUT    IN01-FILE
+                  OUTPUT   PRT-TEST-FILE.
        *>
        *>[入力]受注ファイルの読み込み
            PERFORM    TEST-FILE-IN01-READ-PROC.
@@ -107,7 +107,7 @@
        *>
                NOT   AT     END
                IF IN01-RECODE = SPACE THEN
-               DISPLAY IN01-RECODE
+               *>DISPLAY IN01-RECODE
                ADD   ZERO   TO   WRK-OUT-COUNT
                *>
                ELSE IF IN01-RECODE >= 1 THEN
@@ -117,12 +117,13 @@
            END-READ
        END-PERFORM.
        *>
-       *>印刷
-                  MOVE      WRK-OUT-COUNT        TO   OUT-NUMBER.
-           DISPLAY"WRK-OUT-COUNT:"WRK-OUT-COUNT
-           DISPLAY"OUT-NUMBER:"OUT-NUMBER
-           WRITE     PRT-RECODE         FROM   HD01-OUT-NUMBER.
-
+       *>件数の代入と印刷処理
+               MOVE      WRK-OUT-COUNT        TO   OUT-NUMBER.
+               *>DISPLAY"WRK-OUT-COUNT:"WRK-OUT-COUNT
+               *>DISPLAY"OUT-NUMBER:"OUT-NUMBER
+       *>
+               WRITE     PRT-RECODE         FROM   HD01-OUT-NUMBER.
+       *>
        TEST-FILE-IN01-READ-PROC-EXIT.
        *>
            EXIT.
