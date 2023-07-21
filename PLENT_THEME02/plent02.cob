@@ -51,8 +51,8 @@
        *>************************************************************************
        *>印刷用パーツ定義
        *>************************************************************************
-       01   HD01-OUT-NUMBER.
-             03   OUT-NUMBER                        PIC ZZZ,ZZ9.
+       01   HD01-PRT-COUNT.
+             03   PRT-COUNT                        PIC ZZZ,ZZ9.
        *>************************************************************************
        *>手続き部
        *>************************************************************************
@@ -118,11 +118,11 @@
        END-PERFORM.
        *>
        *>      件数の代入と印刷処理
-               MOVE      WRK-OUT-COUNT        TO   OUT-NUMBER.
+               MOVE      WRK-OUT-COUNT        TO   PRT-COUNT.
                *>DISPLAY"WRK-OUT-COUNT:"WRK-OUT-COUNT
-               *>DISPLAY"OUT-NUMBER:"OUT-NUMBER
+               *>DISPLAY"PRT-COUNT:"PRT-COUNT
        *>
-               WRITE     PRT-RECODE         FROM   HD01-OUT-NUMBER.
+               WRITE     PRT-RECODE         FROM   HD01-PRT-COUNT.
        *>
        IN01-FILE-READ-AND-WRITE-PROC-EXIT.
        *>
