@@ -62,8 +62,6 @@
        *>
              PERFORM   MAIN-PROC.
        *>
-             *>PERFORM   INIT-PROC.
-       *>
              PERFORM   TERM-PROC.
        *>
        STOP RUN.
@@ -71,6 +69,8 @@
        *>主処理
        *>************************************************************************
        MAIN-PROC                     SECTION.
+       *>
+             PERFORM   INIT-PROC.
        *>
        MAIN-PROC-EXIT.
        *>
