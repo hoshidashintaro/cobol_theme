@@ -87,7 +87,7 @@
        *>-----------------------------------------------------------------------
        MAIN-PROM                          SECTION.
        *>
-           DISPLAY   MS1-MESSAGE-AREA UPON   CONSOLE.
+           PERFORM   INIT-PROC.
        *>
        MAIN-PROC-EXIT.
        *>
