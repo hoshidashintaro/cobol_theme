@@ -150,10 +150,12 @@
        *>-----------------------------------------------------------------------
        SUMMARY-MAIN-PROC                          SECTION.
        *>
+       *>  集計キー変わりを判定
            IF  IN01-BUNRUI-CODE   NOT =   KEY-BUNRUI-CODE   OR
                IN01-SHOHIN-NO     NOT =   KEY-SHOHIN-NO     THEN
-              *>
-           
+       *>
+       *>  ファイルの書き込み処理
+           PERFORM   WRITE-PROC
        *>
        SUMMARY-MAIN-PROC-EXIT.
        *>
