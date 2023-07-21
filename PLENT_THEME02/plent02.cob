@@ -60,6 +60,8 @@
        *>************************************************************************
        PROCEDURE                     DIVISION.
        *>
+             PERFORM   MAIN-PROC.
+       *>
              PERFORM   INIT-PROC.
        *>
              PERFORM   TERM-PROC.
