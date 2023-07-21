@@ -98,6 +98,10 @@
        *>
        *>    入力ファイルの読み込み
              PERFPRM   IN01-ZYUTYU-FILE-READ-PROC.
+       *>
+       *>    集計処理の呼び出し
+             PERFORM   SUMMARY-MAIN-PROC
+                                       UNTIL   WRK-AT-END  =  CST-END.
        MAIN-PROC-EXIT.
        *>
            EXIT.
