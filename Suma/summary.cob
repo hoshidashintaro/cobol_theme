@@ -157,6 +157,9 @@
        *>  ファイルの書き込み処理
            PERFORM   WRITE-PROC
        *>
+       *>  集計用項目の初期化
+       MOVE   ZERO   TO   WRK-TYUMON-SU-TOTAL
+       *>
        SUMMARY-MAIN-PROC-EXIT.
        *>
            EXIT.
