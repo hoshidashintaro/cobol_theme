@@ -107,6 +107,7 @@
        INIT-PROM                          SECTION.
        *>
              MOVE   SPACE   TO   WRK-AT-END.
+             MOVE   ZERO    TO   WRK-TYUMON-SU.
              MOVE   ZERO    TO   WRK-TYUMON-SU-TOTAL.
        *>
        INIT-PROC-EXIT.
