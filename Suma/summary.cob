@@ -128,11 +128,14 @@
        IN01-ZYUTYU-FILE-READ-PROC                          SECTION.
        *>
            READ IN01-ZYUTYU-FILE
-           AT END
-           MOVE "END" TO WRK-AT-END
-           DISPLAY "READ END"
+                AT     END
+                MOVE   "END"             TO   WRK-AT-END
+                DISPLAY "READ END"
            *>
-           NOT AT END
+               NOT   AT   END
+               MOVE   IN01-BUNRUI-CODE   TO   KEY-BUNRUI-CODE
+               MOVE   IN01-SHOHIN-NO     TO   KEY-SHOHIN-NO
+           END-READ.
 
        *>
        IN01-ZYUTYU-FILE-READ-PROC-EXIT.
