@@ -62,6 +62,8 @@
        *>
              PERFORM   MAIN-PROC.
        *>
+             PERFORM   PRINT-PROC.
+       *>
              PERFORM   TERM-PROC.
        *>
        STOP RUN.
@@ -136,6 +138,11 @@
        *>
            END-READ
        END-PERFORM.
+       *>************************************************************************
+       *>印刷処理
+       *>************************************************************************
+       IN01-FILE-READ-PROC       SECTION.
+
        *>
        *>      件数の代入と印刷処理
                MOVE      WRK-COUNT        TO   PRT-COUNT.
