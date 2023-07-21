@@ -85,7 +85,7 @@
        *>
        *>ファイルのクローズ
            CLOSE   IN01-TEST-FILE
-           PRT-TEST-FILE.
+                   PRT-TEST-FILE.
        *>
        *>入力件数の表示
        *>
