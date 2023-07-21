@@ -71,6 +71,10 @@
        *>  作業領域の初期化
            WRK-OUT-COUNT    =   ZERO.
            IN-FILE-STATUS   =   SPACE.
+       *>
+       *>  印刷用パーツ定義の初期化
+           PRT-COUNT        =   ZERO.
+       *>
        *>  ファイルのオープン
            OPEN   INPUT    IN01-FILE
                   OUTPUT   PRT-TEST-FILE.
