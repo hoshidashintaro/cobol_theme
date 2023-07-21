@@ -46,7 +46,7 @@
        WORKING-STORAGE               SECTION.
        *>
        01   WRK-WOEK-AREA.
-             03   WRK-COUNT                     PIC 9(006).
+             03   WRK-COUNT                        PIC 9(006).
        *>
        *>ステータスの領域を定義を設定する
        01  IN-FILE-STATUS                           PIC XX.
@@ -77,7 +77,7 @@
        *>
        *>  ファイルのオープン
            OPEN   INPUT    IN01-FILE
-                  OUTPUT   PRT-TEST-FILE.
+                  OUTPUT   PRT-FILE.
        *>
        *>  [入力]受注ファイルの読み込み
            PERFORM    IN01-FILE-READ-PROC.
@@ -91,11 +91,11 @@
        INIT-PROC                     SECTION.
        *>
        *>  作業領域の初期化
-           WRK-COUNT        =   ZERO.
-           IN-FILE-STATUS   =   SPACE.
+           MOVE   WRK-COUNT        TO   ZERO.
+           MOVE   IN-FILE-STATUS   TO   SPACE.
        *>
        *>  印刷用パーツ定義の初期化
-           PRT-COUNT        =   ZERO.
+           MOVE   PRT-COUNT        TO   ZERO.
        *>
        INIT-PROC-EXIT.
        *>
