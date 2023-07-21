@@ -150,8 +150,9 @@
        *>-----------------------------------------------------------------------
        SUMMARY-MAIN-PROC                          SECTION.
        *>
-           
-           *>
+           IF  IN01-BUNRUI-CODE   NOT =   KEY-BUNRUI-CODE   OR
+               IN01-SHOHIN-NO     NOT =   KEY-SHOHIN-NO     THEN
+              *>
            
        *>
        SUMMARY-MAIN-PROC-EXIT.
