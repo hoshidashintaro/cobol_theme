@@ -44,7 +44,7 @@
        WORKING-STORAGE               SECTION.
        *>
        01   WRK-WOEK-AREA.
-             03   WRK-OUT-COUNT                     PIC 9(006).
+             03   WRK-COUNT                     PIC 9(006).
        *>
        *>ステータスの領域を定義を設定する
        01  IN-FILE-STATUS                           PIC XX.
@@ -69,7 +69,7 @@
        INIT-PROC                     SECTION.
        *>
        *>  作業領域の初期化
-           WRK-OUT-COUNT    =   ZERO.
+           WRK-COUNT    =   ZERO.
            IN-FILE-STATUS   =   SPACE.
        *>
        *>  印刷用パーツ定義の初期化
@@ -115,18 +115,18 @@
                NOT   AT     END
                IF IN01-RECODE = SPACE THEN
                *>DISPLAY IN01-RECODE
-               ADD   ZERO   TO   WRK-OUT-COUNT
+               ADD   ZERO   TO   WRK-COUNT
                *>
                ELSE IF IN01-RECODE >= 1 THEN
                      DISPLAY IN01-RECODE
-                     ADD   1   TO   WRK-OUT-COUNT
+                     ADD   1   TO   WRK-COUNT
        *>
            END-READ
        END-PERFORM.
        *>
        *>      件数の代入と印刷処理
-               MOVE      WRK-OUT-COUNT        TO   PRT-COUNT.
-               *>DISPLAY"WRK-OUT-COUNT:"WRK-OUT-COUNT
+               MOVE      WRK-COUNT        TO   PRT-COUNT.
+               *>DISPLAY"WRK-COUNT:"WRK-OUT-COUNT
                *>DISPLAY"PRT-COUNT:"PRT-COUNT
        *>
                WRITE     PRT-RECODE         FROM   HD01-PRT-COUNT.
