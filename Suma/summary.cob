@@ -154,11 +154,16 @@
            IF  IN01-BUNRUI-CODE   NOT =   KEY-BUNRUI-CODE   OR
                IN01-SHOHIN-NO     NOT =   KEY-SHOHIN-NO     THEN
        *>
-       *>  ファイルの書き込み処理
-           PERFORM   WRITE-PROC
+       *>      ファイルの書き込み処理
+               PERFORM   WRITE-PROC
        *>
-       *>  集計用項目の初期化
-       MOVE   ZERO   TO   WRK-TYUMON-SU-TOTAL
+       *>      集計用項目の初期化
+               MOVE   ZERO   TO   WRK-TYUMON-SU-TOTAL
+       *>
+       *>      現レコードの集計キーの保存
+               MOVE   IN01-BUNRUI-CODE   TO   KEY-BUNRUI-CODE
+               MOVE   IN01-SHOHIN-NO     TO   KEY-SHOHIN-NO
+           END-IF.
        *>
        SUMMARY-MAIN-PROC-EXIT.
        *>
