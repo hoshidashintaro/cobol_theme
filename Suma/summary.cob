@@ -168,8 +168,8 @@
        *>  数量、売上金額の集計
            ADD IN01-TYUMON-SU TO WRK-TYUMON-SU-TOTAL.
        *>
-       *>    入力ファイルの読み込み
-             PERFPRM   IN01-ZYUTYU-FILE-READ-PROC.
+       *>  入力ファイルの読み込み
+           PERFPRM   IN01-ZYUTYU-FILE-READ-PROC.
        *>
        SUMMARY-MAIN-PROC-EXIT.
        *>
